@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbourly</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+   
+   <section class="hero">
+  <div class="hero-container">
+    
+
+<div class="top-nav">
+  <div class="nav-left">
+  <h1 class="logo-text">NEIGHBOURLY</h1>
+
+  </div>
+
+  <div class="nav-right">
+  <a href="{{ url_for('login') }}" class="login-btn">Login</a>
+</div><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Neighbourly</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+
+<div class="login-wrapper">
+
+  <div class="login-card">
+
+    <h1 class="brand">Neighbourly</h1>
+    <p class="tagline">Book trusted local services instantly</p>
+
+    <form method="POST" action="/submit">
+
+      <div class="input-box">
+        <input type="email" name="email" required>
+        <label>Gmail address</label>
+      </div>
+
+      <div class="input-box">
+        <input type="password" name="password" required>
+        <label>Password</label>
+      </div>
+
+      <button type="submit">Login</button>
+
+    </form>
+
+    <p class="bottom-text">
+      New here? <a href="#">Create account</a>
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbourly</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edetail.css') }}">
+</head>
+<body>
+
+<a href="javascript:history.back()" class="back">← Back</a>
+
+<div class="card">
+    <h1>{{ service.name }}</h1>
+    <p>⭐ {{ service.rating }} • {{ service.availability }}</p>
+
+    <h2>Our process</h2>
+
+    <div class="process">
+        {% for p in service.process %}
+        <div class="step">
+            <div class="circle">{{ loop.index }}</div>
+            <div>
+                <h3>{{ p.step }}</h3>
+                <p>{{ p.desc }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Reviews</h2>
+    <textarea placeholder="Write your review..."></textarea><br>
+    <button>Submit Review</button>
+</div>
+
+</body>
+</html>
+
+</div>
+
+    
+    <div class="hero-content">
+      <p class="hero-offer">Up to 50% off on first service</p>
+
+      <h1 class="hero-heading">
+        Book Local Services<br>
+        in Minutes
+      </h1>
+
+      <p class="hero-desc">
+        Electricians, plumbers, cleaners and more at your doorstep.
+      </p>
+
+      <p class="hero-price">Starting from <strong style="font-size: 1.5em;">₹350/</strong>per service</p>
+
+      <button class="hero-btn">Claim Deal</button>
+    </div>
+   
+    <div class="hero-visual">
+      <img src="{{ url_for('static', filename='images/service1.png') }}">
+    </div>
+
+  </div>
+
+<div class="hero-rating-bottom">
+  <h5>Excellent</5>
+  <span class="stars">★★★★⯪</span>
+  <h5>4.5 ratings on <h5 class="trust-star">✯</h5>Trustpilot</h5>
+</div>
+
+  
+  <section class="wrap">
+  <div class="wbox">
+    <div class="boo">
+      <h2>50K+</h2>
+      <p>Happy Customers</p>
+    </div>
+
+    <div class="boo">
+      <h2>8K+</h2>
+      <p>Trusted Professionals</p>
+    </div>
+
+    <div class="boo">
+      <h2>4.8</h2>
+      <p>Average Rating</p>
+    </div>
+
+    <div class="boo">
+      <h2>120K+</h2>
+      <p>Services Completed</p>
+    </div>
+  </div>
+</section>
+
+
+    <section class="fade-section">
+        <section class="controls">
+            <input type="text" id="searchInput" placeholder="Search Services...">
+
+            <select id="categoryFilter">
+                <option value="all categories">All Categories</option>
+                <option value="Electrician">Electrician</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Cleaning">Home Cleaning</option>
+                <option value="Tutor">Tutor</option>
+                <option value="Mechanic">Mechanic</option>
+            </select>
+
+            <select id="locationFilter">
+                <option>All Locations</option>
+                <option>Borivali</option>
+                <option>Kandivali</option>
+            </select>
+
+            <select id="availabilityFilter">
+                <option>Any Status</option>
+                <option>Available</option>
+                <option>Busy</option>
+                <option>Offline</option>
+            </select>
+        </section>
+    </section>
+<div id="services-container"></div>
+
+    
+    
+        
+    
+<section class="review-section">
+
+    <h1 class="hr"><b>Don’t Just Take Our Word for It </b></h1>
+    <h6 class="hp">We help customers find reliable local experts every day. Here’s what they have to say about our .</services></h6>
+ 
+        <div class="review-row move-left">
+    <div class="review-track">
+      <div class="review-box">
+        <h4>Rohit Sharma</h4>
+        <span>Electrician Service</span>
+        <p>
+          Booking was super easy and the electrician arrived on time.
+          Very professional and affordable service.
+        </p>
+      </div>
+
+      <div class="review-box">
+        <h4>Ananya Verma</h4>
+        <span>Cleaning Service</span>
+        <p>
+          The cleaner did an amazing job. My house looks brand new.
+          Totally worth the price!
+        </p>
+      </div>
+
+      <div class="review-box">
+        <h4>Kunal Mehta</h4>
+        <span>Plumber Service</span>
+        <p>
+          Fixed my leakage issue within minutes.
+          Very polite and skilled professional.
+        </p>
+      </div>
+ <div class="review-box">
+        <h4>Rohit Sharma</h4>
+        <span>Electrician Service</span>
+        <p>
+          Booking was super easy and the electrician arrived on time.
+          Very professional and affordable service.
+        </p>
+      </div>
+
+      <div class="review-box">
+        <h4>Ananya Verma</h4>
+        <span>Cleaning Service</span>
+        <p>
+          The cleaner did an amazing job. My house looks brand new.
+          Totally worth the price!
+        </p>
+      </div>
+
+      <div class="review-box">
+        <h4>Kunal Mehta</h4>
+        <span>Plumber Service</span>
+        <p>
+          Fixed my leakage issue within minutes.
+          Very polite and skilled professional.
+        </p>
+      </div>
+
+     
+      <div class="review-box">
+        <h4>Rohit Sharma</h4>
+        <span>Electrician Service</span>
+        <p>
+          Booking was super easy and the electrician arrived on time.
+          Very professional and affordable service.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="review-row move-right">
+    <div class="review-track">
+      <div class="review-box">
+        <h4>Neha Kapoor</h4>
+        <span>AC Repair</span>
+        <p>
+          The technician was knowledgeable and fixed my AC quickly.
+          Highly recommended service.
+        </p>
+      </div>
+
+      <div class="review-box">
+        <h4>Aman Gupta</h4>
+        <span>Carpentry Service</span>
+        <p>
+          Excellent craftsmanship and very neat work.
+          I will definitely book again.
+        </p>
+      </div>
+
+      <div class="review-box">
+        <h4>Pooja Singh</h4>
+        <span>Pest Control</span>
+        <p>
+          Very effective service and friendly staff.
+          My home is finally pest-free.
+        </p>
+      </div>
+
+      <div class="review-box">
+        <h4>Neha Kapoor</h4>
+        <span>AC Repair</span>
+        <p>
+          The technician was knowledgeable and fixed my AC quickly.
+          Highly recommended service.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbourly</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edetail.css') }}">
+</head>
+<body>
+
+<a href="javascript:history.back()" class="back">← Back</a>
+
+<div class="card">
+    <h1>{{ service.name }}</h1>
+    <p>⭐ {{ service.rating }} • {{ service.availability }}</p>
+
+    <h2>Our process</h2>
+
+    <div class="process">
+        {% for p in service.process %}
+        <div class="step">
+            <div class="circle">{{ loop.index }}</div>
+            <div>
+                <h3>{{ p.step }}</h3>
+                <p>{{ p.desc }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Reviews</h2>
+    <textarea placeholder="Write your review..."></textarea><br>
+    <button>Submit Review</button>
+</div>
+
+</body>
+</html>
